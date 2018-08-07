@@ -3,8 +3,9 @@ class Calculator {
 		this.operator = '';
 		this.isDisplayEmpty = true;
 		this.display = document.getElementById('display');
-		this.subDisplay = document.getElementById('subDisplay');
+		// this.subDisplay = document.getElementById('subDisplay');
 		this.cachedValue = 0;
+		this.display.value = 0;
 		this.operations = {
 			'+': (a,b) => a+b,
 			'-': (a,b) => a-b,
@@ -15,24 +16,38 @@ class Calculator {
 		}
 	}
 	addNumber(x) {
+		if (this.display.value != '0') {
 		this.display.value += x;
-		this.subDisplay.value += x;
+		// this.subDisplay.value += x;
 		this.isDisplayEmpty = false;
+		}
+		else if (x != 0) {
+			this.display.value = x;
+		}
 	}
 	chooseOperation(x) {
 		if (!this.isDisplayEmpty) {
 		this.cachedValue = this.display.value;
 		this.operator = x;
 		this.display.value = '';
-		this.subDisplay.value += x;
+		// this.subDisplay.value += x;
 		this.isDisplayEmpty = true;
 		}
 	}
-	equals() {
-		let answer = this.operations[this.operator](+this.cachedValue,+this.display.value);
-		this.cachedValue += this.display.value;
-		this.display.value = answer;
-
+	equals(x) {
+		if (this.operator) {
+			let answer = this.operations[this.operator](+this.cachedValue,+x);
+			this.display.value = answer;
+			this.cachedValue = this.display.value;
+		}
+	}
+	clearAll() {
+		this.display.value = '';
+		this.cachedValue = 0;
+		this.operator = '';
+	}
+	clearDisplay() {
+		this.display.value = '';
 	}
 };
 let calc =  new Calculator;
@@ -46,4 +61,10 @@ for (let j = 0; j < operationButtons.length; j++) {
 	operationButtons[j].addEventListener("click", () => calc.chooseOperation(operationButtons[j].value));
 }
 let equalsButton = document.getElementById("eqvls");
-equalsButton.addEventListener("click", () => calc.equals());
+equalsButton.addEventListener("click", () => calc.equals(calc.display.value));
+
+let clearAllButton = document.getElementById("clearAll");
+clearAllButton.addEventListener("click", () => calc.clearAll());
+
+let clearDisplayButton = document.getElementById("clearDisplay");
+clearDisplayButton.addEventListener("click", () => calc.clearDisplay())

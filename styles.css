@@ -1,0 +1,31 @@
+.w3-button {
+    width: 50px;
+    height: 50px;
+}
+
+.w3-input {
+    height: 30px;
+    text-align: right;
+}
+
+.container1 {
+    width: 224px;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 150px; 
+}
+
+.container2 {
+    display: grid;
+    margin: auto;
+    padding-top: 12px; 
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px;
+    grid-gap: 8px;
+}
+
+
+body{
+    background: powderblue;
+    background: linear-gradient(to right, powderblue, turquoise);
+} 

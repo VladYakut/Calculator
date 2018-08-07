@@ -3,29 +3,34 @@
 <head>
 	<title>Калькулятор</title>
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
 
-<form id="calculator">
-	<input type="text" name="display" id="display" readonly="readonly" value = "">
-	<input type="text" name="subDisplay" id="subDisplay" readonly="readonly" value = "">
-	<div>
-		<input type="button" class="button numberButton" value="1">
-		<input type="button" class="button numberButton" value="2">
-		<input type="button" class="button numberButton" value="3">
-		<input type="button" class="button numberButton" value="4">
-		<input type="button" class="button numberButton" value="5">
-		<input type="button" class="button numberButton" value="6">
-		<input type="button" class="button numberButton" value="7">
-		<input type="button" class="button numberButton" value="8">
-		<input type="button" class="button numberButton" value="9">
-		<input type="button" class="button numberButton" value="0">
-		<input type="button" class="button operationButton" value="+">
-		<input type="button" class="button operationButton" value="-">
-		<input type="button" class="button operationButton" value="*">
-		<input type="button" class="button operationButton" value="/">
-		<input type="button" class="button operationButton" value="**y">
-		<input type="button" class="button operationButton" value="sqrt">
-		<input type="button" class="button equalsButton" id="eqvls" value="=">
+<form class="container1">
+	<input type="text" name="display" id="display" class="w3-input" readonly="readonly" value = "">
+	<!-- <input type="text" name="subDisplay" id="subDisplay" readonly="readonly" value = ""> -->
+	<div class="container2">
+		<input type="button" class="button numberButton w3-button w3-theme" value="1">
+		<input type="button" class="button numberButton w3-button w3-theme" value="2">
+		<input type="button" class="button numberButton w3-button w3-theme" value="3">
+		<input type="button" class="button numberButton w3-button w3-theme" value="4">
+		<input type="button" class="button numberButton w3-button w3-theme" value="5">
+		<input type="button" class="button numberButton w3-button w3-theme" value="6">
+		<input type="button" class="button numberButton w3-button w3-theme" value="7">
+		<input type="button" class="button numberButton w3-button w3-theme" value="8">
+		<input type="button" class="button numberButton w3-button w3-theme" value="9">
+		<input type="button" class="button numberButton w3-button w3-theme" value="0">
+		<input type="button" class="button operationButton w3-button w3-theme" value="+">
+		<input type="button" class="button operationButton w3-button w3-theme" value="-">
+		<input type="button" class="button operationButton w3-button w3-theme" value="*">
+		<input type="button" class="button operationButton w3-button w3-theme" value="/">
+		<!-- <input type="button" class="button operationButton" value="**y"> -->
+		<!-- <input type="button" class="button operationButton" value="sqrt"> -->
+		<input type="button" class="button equalsButton w3-button w3-theme" id="eqvls" value="=">
+		<input type="button" class="button clearAllButton w3-button w3-theme" id="clearAll" value="AC">
+		<input type="button" class="button clearDisplay w3-button w3-theme" id="clearDisplay" value="CE">
 	</div>
 </form>
 <p id="sheeps">Овцы съели людей</p>
