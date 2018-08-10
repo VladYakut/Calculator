@@ -1,11 +1,49 @@
+.container2 {
+    display: grid;
+    margin: auto;
+    padding-top: 12px; 
+    grid-template-areas: "AC    AC    CE    CE"
+                         "one   two   three plus"
+                         "four  five  six   minus"
+                         "seven eight nine  star"
+                         "equals   zer   dot slash";
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px;
+    grid-gap: 8px;
+    font-size:150%;
+    /*align-items: stretch;*/
+}
 .w3-button {
     width: 50px;
     height: 50px;
 }
 
+
+.num1 {grid-area: one;}
+.num2 {grid-area: two;}
+.num3 {grid-area: three;}
+.num4 {grid-area: four;}
+.num5 {grid-area: five;}
+.num6 {grid-area: six;}
+.num7 {grid-area: seven;}
+.num8 {grid-area: eight;}
+.num9 {grid-area: nine;}
+.num0 {grid-area: zer;}
+.numplus {grid-area: plus;}
+.numminus {grid-area: minus;}
+.numstar {grid-area: star;}
+.numslash {grid-area: slash;}
+.numequals {grid-area: equals;}
+.numAC {grid-area: AC; width: 108px;}
+.numCE {grid-area: CE; width: 108px;} /* govnokod */
+.numdot {grid-area: dot;}
+
+
+
 .w3-input {
-    height: 30px;
+    height: 50px;
     text-align: right;
+    font-size: 250%;
 }
 
 .container1 {
@@ -15,17 +53,13 @@
     padding-bottom: 150px; 
 }
 
-.container2 {
-    display: grid;
-    margin: auto;
-    padding-top: 12px; 
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 50px 50px;
-    grid-gap: 8px;
-}
+
+
+
 
 
 body{
     background: powderblue;
-    background: linear-gradient(to right, powderblue, turquoise);
+    background: linear-gradient(to right, powderblue, palevioletred);
 } 
+
