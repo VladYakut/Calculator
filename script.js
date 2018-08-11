@@ -29,7 +29,7 @@ class Calculator {
 		if (!this.isDisplayEmpty) {
 		this.cachedValue = this.display.value;
 		this.operator = x;
-		this.display.value = '';
+		this.display.value = '0';
 		// this.subDisplay.value += x;
 		this.isDisplayEmpty = true;
 		}
@@ -42,12 +42,12 @@ class Calculator {
 		}
 	}
 	clearAll() {
-		this.display.value = '';
+		this.display.value = '0';
 		this.cachedValue = 0;
 		this.operator = '';
 	}
 	clearDisplay() {
-		this.display.value = '';
+		this.display.value = '0';
 	}
 };
 let calc =  new Calculator;
@@ -68,3 +68,4 @@ clearAllButton.addEventListener("click", () => calc.clearAll());
 
 let clearDisplayButton = document.getElementById("clearDisplay");
 clearDisplayButton.addEventListener("click", () => calc.clearDisplay())
+
