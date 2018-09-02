@@ -1,9 +1,9 @@
 class Calculator {
 	constructor() {
 		this.operator = '';
-		this.isDisplayEmpty = true;
+		this.isOperationChoosen = false;
+		this.isAnswerDisplayed = false;
 		this.display = document.getElementById('display');
-		// this.subDisplay = document.getElementById('subDisplay');
 		this.cachedValue = 0;
 		this.display.value = 0;
 		this.operations = {
@@ -11,27 +11,27 @@ class Calculator {
 			'-': (a,b) => a-b,
 			'*': (a,b) => a*b,
 			'/': (a,b) => a/b,
-			'**y': (a,b) => Math.pow(a,b),
-			'sqrt': (a,b) => Math.sqrt(b)
 		}
 	}
 	addNumber(x) {
-		if (this.display.value != '0') {
-		this.display.value += x;
-		// this.subDisplay.value += x;
-		this.isDisplayEmpty = false;
-		}
-		else if (x != 0) {
+		if (this.isOperationChoosen) {
 			this.display.value = x;
+			this.isOperationChoosen = false;
+		}
+		else {
+			if (this.display.value != '0') {
+				this.display.value += x;
+			}
+			else {
+					this.display.value = x;
+			}
 		}
 	}
 	chooseOperation(x) {
 		if (!this.isDisplayEmpty) {
 		this.cachedValue = this.display.value;
 		this.operator = x;
-		this.display.value = '0';
-		// this.subDisplay.value += x;
-		this.isDisplayEmpty = true;
+		this.isOperationChoosen = true;
 		}
 	}
 	equals(x) {
@@ -39,6 +39,8 @@ class Calculator {
 			let answer = this.operations[this.operator](+this.cachedValue,+x);
 			this.display.value = answer;
 			this.cachedValue = this.display.value;
+			this.isAnswerDisplayed = true;
+			this.isOperationChoosen = false;
 		}
 	}
 	clearAll() {
@@ -48,6 +50,9 @@ class Calculator {
 	}
 	clearDisplay() {
 		this.display.value = '0';
+	}
+	addDot() {
+		this.display.value += '.';
 	}
 };
 let calc =  new Calculator;
@@ -67,5 +72,8 @@ let clearAllButton = document.getElementById("clearAll");
 clearAllButton.addEventListener("click", () => calc.clearAll());
 
 let clearDisplayButton = document.getElementById("clearDisplay");
-clearDisplayButton.addEventListener("click", () => calc.clearDisplay())
+clearDisplayButton.addEventListener("click", () => calc.clearDisplay());
+
+let dotButton = document.getElementById("dotBtn");
+dotButton.addEventListener("click", () => calc.addDot());
 

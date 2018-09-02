@@ -38,7 +38,9 @@
 .numCE {grid-area: CE; width: 108px;} /* govnokod */
 .numdot {grid-area: dot;}
 
-
+input {
+    border-radius: 5px;
+}
 
 .w3-input {
     height: 50px;
